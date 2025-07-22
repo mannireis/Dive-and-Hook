@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsdco8271ighg"]
+
+[ext_resource type="Script" uid="uid://bh7pyg5t23w1v" path="res://player/player.gd" id="1_oul6g"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0xm2m"]
+height = 34.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_oul6g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_0xm2m")
+debug_color = Color(0.664289, 0.485007, 0.457666, 0.42)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -20)
+zoom = Vector2(2.5, 2.5)
+position_smoothing_enabled = true
+position_smoothing_speed = 7.0
