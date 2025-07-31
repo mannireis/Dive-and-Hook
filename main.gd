@@ -122,4 +122,5 @@ func _on_character_body_2d_break_block() -> void:
 				tile_hit_counts[key] += 1
 			if tile_hit_counts[key] >= MAX_HITS:
 				tile_map_layer.erase_cell(tile_coords)
+				tile_map_layer.update_internals()
 				tile_hit_counts.erase(key)

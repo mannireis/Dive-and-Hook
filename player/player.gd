@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
+@onready var savemenu : Control = $UI/SaveMenu
+@onready var pausemenu : Control = $UI/MainMenu
+
 @export var SPEED = 250
 @export var JUMP_VELOCITY = -225
-
-@onready var savemenu : Control = $UI/SaveMenu
-@onready var pausemenu : Control = $UI/Control
 
 var inside_detector = false
 
@@ -17,9 +17,6 @@ func _ready():
 	pausemenu.visible = false
 
 func _physics_process(delta: float) -> void:
-	if inside_detector == true:
-		pass
-	
 	update_input()
 	update_gravity(delta)
 
@@ -41,12 +38,12 @@ func update_input():
 
 	if Input.is_action_just_pressed("ESC"):
 		pausemenu.visible = !pausemenu.visible
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
 	if Input.is_action_just_pressed("LMB"):
 		break_block.emit()
 
 func _on_mouse_detector_mouse_entered():
-	print("true")
 	inside_detector = true
 
 func _on_mouse_detector_mouse_exited():
