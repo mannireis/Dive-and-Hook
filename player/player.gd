@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@onready var animationplayer : AnimatedSprite2D = $AnimatedSprite2D
 @onready var savemenu : Control = $UI/SaveMenu
 @onready var pausemenu : Control = $UI/MainMenu
 
@@ -19,6 +20,7 @@ func _ready():
 func _physics_process(delta: float) -> void:
 	update_input()
 	update_gravity(delta)
+	update_animation()
 
 func update_gravity(delta: float):
 	if not is_on_floor():
@@ -34,6 +36,8 @@ func update_gravity(delta: float):
 
 func update_input():
 	if Input.is_action_just_pressed("jump") and is_on_floor():
+		animationplayer.pause()
+		animationplayer.play("jump")
 		velocity.y = JUMP_VELOCITY
 
 	if Input.is_action_just_pressed("ESC"):
@@ -42,6 +46,18 @@ func update_input():
 	
 	if Input.is_action_just_pressed("LMB"):
 		break_block.emit()
+
+func update_animation():
+	if velocity.x == 0:
+		animationplayer.play("idle")
+
+	if velocity.x > 0:
+		animationplayer.flip_h = false
+		animationplayer.play("walk")
+
+	if velocity.x < 0:
+		animationplayer.flip_h = true
+		animationplayer.play("walk")
 
 func _on_mouse_detector_mouse_entered():
 	inside_detector = true
