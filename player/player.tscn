@@ -95,7 +95,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk",
-"speed": 5.0
+"speed": 7.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0xm2m"]
@@ -110,9 +110,8 @@ script = ExtResource("1_oul6g")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 2)
 sprite_frames = SubResource("SpriteFrames_qjkh3")
-animation = &"jump"
+animation = &"walk"
 autoplay = "idle"
-frame_progress = 0.326056
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)
@@ -121,7 +120,7 @@ debug_color = Color(0.664289, 0.485007, 0.457666, 0.42)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -20)
-zoom = Vector2(2.5, 2.5)
+zoom = Vector2(3, 3)
 position_smoothing_enabled = true
 position_smoothing_speed = 7.0
 
