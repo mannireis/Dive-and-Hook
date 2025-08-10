@@ -37,7 +37,7 @@ func update_gravity(delta: float):
 func update_input():
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		animationplayer.pause()
-		animationplayer.play("jump")
+		animationplayer.play("jump_land")
 		velocity.y = JUMP_VELOCITY
 
 	if Input.is_action_just_pressed("ESC"):

@@ -13,8 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://oayk0jhvdfuq" path="res://mp_character_animation_asset_pack_v1.0/mp_character_animation_asset_pack_v1.0/Exported PNGs/Female/Character 1/No Clothes/Character1F_4_idle_6.png" id="8_e7oew"]
 [ext_resource type="Texture2D" uid="uid://cos41j16ulos1" path="res://mp_character_animation_asset_pack_v1.0/mp_character_animation_asset_pack_v1.0/Exported PNGs/Female/Character 1/No Clothes/Character1F_4_idle_7.png" id="9_c35mf"]
 [ext_resource type="Texture2D" uid="uid://dnd8es3657qia" path="res://mp_character_animation_asset_pack_v1.0/mp_character_animation_asset_pack_v1.0/Exported PNGs/Female/Character 1/No Clothes/Character1F_4_walk_0.png" id="10_65viv"]
-[ext_resource type="Texture2D" uid="uid://3qkbjdjs2ny1" path="res://mp_character_animation_asset_pack_v1.0/mp_character_animation_asset_pack_v1.0/Exported PNGs/Female/Character 1/No Clothes/Character1F_4_jump_0.png" id="10_bjvpn"]
-[ext_resource type="Texture2D" uid="uid://dydnejidlpxyg" path="res://mp_character_animation_asset_pack_v1.0/mp_character_animation_asset_pack_v1.0/Exported PNGs/Female/Character 1/No Clothes/Character1F_4_jump_1.png" id="11_s7qer"]
+[ext_resource type="Texture2D" uid="uid://cuu5mne7obt7p" path="res://assets/mp_character_animation_asset_pack_v1.0/mp_character_animation_asset_pack_v1.0/Exported PNGs/Female/Character 1/No Clothes/Character1F_4_land_0.png" id="10_bjvpn"]
+[ext_resource type="Texture2D" uid="uid://d0kg46fto8cet" path="res://assets/mp_character_animation_asset_pack_v1.0/mp_character_animation_asset_pack_v1.0/Exported PNGs/Female/Character 1/No Clothes/Character1F_4_land_1.png" id="11_s7qer"]
 [ext_resource type="Texture2D" uid="uid://ce223gys5b6n2" path="res://mp_character_animation_asset_pack_v1.0/mp_character_animation_asset_pack_v1.0/Exported PNGs/Female/Character 1/No Clothes/Character1F_4_walk_1.png" id="11_x7c3f"]
 [ext_resource type="Texture2D" uid="uid://dbwpula0bhxkq" path="res://mp_character_animation_asset_pack_v1.0/mp_character_animation_asset_pack_v1.0/Exported PNGs/Female/Character 1/No Clothes/Character1F_4_walk_2.png" id="12_bjvpn"]
 [ext_resource type="Texture2D" uid="uid://beeab0o1cqgwo" path="res://mp_character_animation_asset_pack_v1.0/mp_character_animation_asset_pack_v1.0/Exported PNGs/Female/Character 1/No Clothes/Character1F_4_walk_3.png" id="13_s7qer"]
@@ -64,9 +64,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("11_s7qer")
 }],
-"loop": true,
-"name": &"jump",
-"speed": 4.0
+"loop": false,
+"name": &"jump_land",
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -95,7 +95,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk",
-"speed": 7.0
+"speed": 10.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0xm2m"]

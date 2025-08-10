@@ -1,7 +1,6 @@
 extends Node
 
 var player : CharacterBody2D = null
-
 var player_spawn_position = Vector2.ZERO
 
 var target_scene: String = ""
@@ -10,7 +9,6 @@ func save_game(player_position: Vector2, slot: int):
 	var save = ConfigFile.new()
 	save.set_value("Player", "x_position", player_position.x)
 	save.set_value("Player", "y_position", player_position.y)
-
 	var save_path : String = "user://save%d.cfg" % slot
 
 	save.save(save_path)
