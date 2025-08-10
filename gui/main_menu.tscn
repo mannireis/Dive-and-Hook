@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://bt2e73cwyl2eq"]
+[gd_scene load_steps=3 format=3 uid="uid://bt2e73cwyl2eq"]
+
+[ext_resource type="Script" uid="uid://dnjocd5hq4mtq" path="res://gui/main_menu.gd" id="1_reecx"]
+[ext_resource type="PackedScene" uid="uid://bqxcscoj17r11" path="res://gui/save_menu.tscn" id="2_xkvi0"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -7,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_reecx")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
@@ -22,3 +26,10 @@ offset_bottom = 15.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Play"
+
+[node name="SaveMenu" parent="." instance=ExtResource("2_xkvi0")]
+layout_mode = 1
+offset_top = -2.0
+offset_bottom = -2.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

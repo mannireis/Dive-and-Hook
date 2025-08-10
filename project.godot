@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Dive and Drift"
-run/main_scene="uid://b0cwjuo5knfvg"
+run/main_scene="uid://bt2e73cwyl2eq"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -75,3 +75,6 @@ ESC={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_s3tc_bptc=true
