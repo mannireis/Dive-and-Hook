@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bsdco8271ighg"]
+[gd_scene load_steps=30 format=3 uid="uid://bsdco8271ighg"]
 
 [ext_resource type="Script" uid="uid://bh7pyg5t23w1v" path="res://player/player.gd" id="1_oul6g"]
 [ext_resource type="Texture2D" uid="uid://bwmm07ebnryxx" path="res://mp_character_animation_asset_pack_v1.0/mp_character_animation_asset_pack_v1.0/Exported PNGs/Female/Character 1/No Clothes/Character1F_4_idle_0.png" id="2_ebec5"]
@@ -22,6 +22,10 @@
 [ext_resource type="Texture2D" uid="uid://wu66mloptfrx" path="res://mp_character_animation_asset_pack_v1.0/mp_character_animation_asset_pack_v1.0/Exported PNGs/Female/Character 1/No Clothes/Character1F_4_walk_5.png" id="15_knn7v"]
 [ext_resource type="Texture2D" uid="uid://bs338ubydiei0" path="res://mp_character_animation_asset_pack_v1.0/mp_character_animation_asset_pack_v1.0/Exported PNGs/Female/Character 1/No Clothes/Character1F_4_walk_6.png" id="16_7pqkx"]
 [ext_resource type="Texture2D" uid="uid://bam5afelmrbjc" path="res://mp_character_animation_asset_pack_v1.0/mp_character_animation_asset_pack_v1.0/Exported PNGs/Female/Character 1/No Clothes/Character1F_4_walk_7.png" id="17_uw77l"]
+[ext_resource type="Texture2D" uid="uid://cbuowso8wk04y" path="res://assets/bg/1.png" id="23_7pqkx"]
+[ext_resource type="Texture2D" uid="uid://ph3qbtlve5rf" path="res://assets/bg/2.png" id="24_uw77l"]
+[ext_resource type="Texture2D" uid="uid://bcrl6ir1pv6wb" path="res://assets/bg/3.png" id="25_rptt4"]
+[ext_resource type="Texture2D" uid="uid://c883army4qku5" path="res://assets/bg/4.png" id="26_r7pn3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qjkh3"]
 animations = [{
@@ -106,6 +110,45 @@ size = Vector2(48, 64)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_oul6g")
+
+[node name="background" type="Node2D" parent="."]
+position = Vector2(0, -203)
+
+[node name="Background" type="Parallax2D" parent="background"]
+scroll_scale = Vector2(0.1, 1)
+repeat_size = Vector2(576, 0)
+repeat_times = 8
+
+[node name="1" type="Sprite2D" parent="background/Background"]
+texture = ExtResource("23_7pqkx")
+centered = false
+
+[node name="Midground 1" type="Parallax2D" parent="background"]
+scroll_scale = Vector2(0.4, 1)
+repeat_size = Vector2(576, 0)
+repeat_times = 8
+
+[node name="2" type="Sprite2D" parent="background/Midground 1"]
+texture = ExtResource("24_uw77l")
+centered = false
+
+[node name="Midground 2" type="Parallax2D" parent="background"]
+scroll_scale = Vector2(0.6, 1)
+repeat_size = Vector2(576, 0)
+repeat_times = 8
+
+[node name="3" type="Sprite2D" parent="background/Midground 2"]
+texture = ExtResource("25_rptt4")
+centered = false
+
+[node name="Foreground" type="Parallax2D" parent="background"]
+scroll_scale = Vector2(0.9, 1)
+repeat_size = Vector2(576, 0)
+repeat_times = 8
+
+[node name="4" type="Sprite2D" parent="background/Foreground"]
+texture = ExtResource("26_r7pn3")
+centered = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 2)
